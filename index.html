@@ -8,12 +8,12 @@
       var userName = prompt("Welcome to the Guessing Game!\nReady to play? Tell me your name.");
 
       // question 1
-      var userAnswer1 = prompt("Question 1:\nWhat two fruits are anagrams of each other?");
-      if (userAnswer1.toLowerCase() === 'lemon and melon' || userAnswer1.toLowerCase() === 'melon and lemon') {
+      var userAnswer1 = prompt("Question 1:\nWhat citrus fruit is an anagram of melon?");
+      if (userAnswer1.toLowerCase() === 'lemon') {
         alert("Correct! Good job " + userName + "!");
         score = 1;
       } else {
-        alert("Sorry " + userName + ", wrong answer! Lemon and melon are anagrams of each other.");
+        alert("Sorry " + userName + ", wrong answer! The letters in melon can be re-arranged to spell lemon.");
       }
       console.log("User's first answer: " + userAnswer1);
       console.log("Score: " + score);
@@ -41,7 +41,7 @@
       console.log("Score: " + score);
 
       // question 4
-      var userAnswer4 = prompt("Question 4:\nHow fingers does Mickey Mouse have?");
+      var userAnswer4 = prompt("Question 4:\nHow many fingers does Mickey Mouse have?");
       if (userAnswer4 == 8) {
         alert("Excelent " + userName + "!")
         score++;
