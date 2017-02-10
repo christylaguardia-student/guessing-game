@@ -8,8 +8,8 @@
       var userName = prompt("Welcome to the Guessing Game!\nReady to play? Tell me your name.");
 
       // question 1
-      var userAnswer1 = prompt("Question 1:\nWhat citrus fruit is an anagram of melon?");
-      if (userAnswer1.toLowerCase() === 'lemon') {
+      var userAnswer1 = prompt("Question 1:\nIs lemon an anagram of melon?");
+      if (userAnswer1 === 'yes') {
         alert("Correct! Good job " + userName + "!");
         score = 1;
       } else {
@@ -19,19 +19,19 @@
       console.log("Score: " + score);
 
       // question 2
-      var userAnswer2 = prompt("Quesion 2:\nWhere is Mount Olympus?");
-      if (userAnswer2.toLowerCase() === 'greece') {
-        alert("Right " + userName + "! You sure know your mountains!");
+      var userAnswer2 = prompt("Quesion 2:\nIs Mount Olympus located in the Alps?");
+      if (userAnswer2 === 'no') {
+        alert("Right " + userName + "! Mount Olympus is in Greece. You sure know your mountains!");
         score++;
       } else {
-        alert("Nope, Mount Olympus is in Greece, not " + userAnswer2 + ".");
+        alert("Nope, Mount Olympus is in Greece, not the Alps.");
       }
       console.log("User's second answer: " + userAnswer2);
       console.log("Score: " + score);
 
       // question 3
-      var userAnswer3 = prompt("Question 3:\nWhich is the fourth planet from the Sun?");
-      if (userAnswer3.toLowerCase() === 'mars') {
+      var userAnswer3 = prompt("Question 3:\nIs Mars the fourth planet from the Sun?");
+      if (userAnswer3 === 'yes') {
         alert("Bingo " + userName + "!");
         score++;
       } else {
