@@ -66,10 +66,10 @@ function playGame() {
     alert("Excelent " + userName + "!")
     correct++;
   } else if (userAnswer4 < 8) {
-    alert("Actually, Mickey has 8 fingers, not " + userAnswer4 + ".");
+    alert("Actually, Mickey has 8 fingers total, not " + userAnswer4 + ". We're disappointed you didn't know that.");
     incorrect++;
   } else if (userAnswer4 > 8) {
-    alert("Micky is a mouse. There's no way he could have that many fingers. The right anaswer is 8.");
+    alert("Micky is a mouse. There's no way he could have that many fingers. The right answer is 8.");
     incorrect++;
   }
   console.log("total correct: " + correct);
