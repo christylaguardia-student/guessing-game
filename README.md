@@ -11,3 +11,4 @@ Create a game in javascript using prompts to ask the user to answer 4 questions.
 
 CITATIONS
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators
+https://www.w3schools.com/css/css_align.asp
