@@ -1,7 +1,10 @@
+* {
+  font-family: "Helvetica Neue", sans-serif;
+}
+
 h1 {
   color: rgb(232, 162, 2);
   text-align: center;
-  font-family: "Lucida Grande", sans-serif;
   font-size: 56px;
   font-style: italic;
 }
