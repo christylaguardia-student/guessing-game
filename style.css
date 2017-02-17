@@ -1,23 +1,28 @@
 * {
   font-family: "Helvetica Neue", sans-serif;
-  text-align: center;
 }
 
 h1 {
   color: rgb(232, 162, 2);
-  /*text-align: center;*/
   font-size: 56px;
-  /*font-style: italic;*/
+  text-align: center;
 }
 
 img {
-    display: block;
-    margin: auto;
-    width: 40%;
+  display: block;
+  margin: auto;
+  width: 40%;
 }
 
 address {
   text-align: center;
+}
+
+#game {
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  /*display: block;*/
 }
 
 #gameQuestion {
@@ -25,19 +30,28 @@ address {
   background-color: #323232;
   font-size: 24px;
   font-style: italic;
-  height: 50px;
 }
 
 #userAnswer {
   color: #323232;
   background-color: #ffec8b;
-  height: 50px;
+  font-size: 24px;
+
 }
 
 #gameResult {
-  color: #FF0000
-
+  /*color: #ccccff;*/
+  font-size: 18px;
 }
+
+div .correct {
+  color: green;
+}
+
+div .incorrect {
+  color: red;
+}
+
 
 #myBtn {
     color: #FFFFFF;
@@ -46,7 +60,6 @@ address {
     display: inline-block;
     font-size: 16px;
     background-color: #323232;
-    /*color: #FFFFFF;*/
     border: 2px solid #87cefa;
     padding: 14px 40px;
     margin: 20px;
