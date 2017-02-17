@@ -129,35 +129,43 @@ function question4() {
   displayResult(userAnswer,resultText);
 }
 
-function checkAnswer(answerToCheck, arrayToSearch) {
-  for (var i; i < arrayToSearch.length; i++) {
-    if (arrayToSearch[i] === answerToCheck) {
-      return true;
-    else {
-      return false;
-    }
-  }
-}
+// function checkAnswer(answerToCheck, arrayToSearch) {
+//   for (var i; i < 7; i++) {
+//     if (arrayToSearch[i].value == answerToCheck.toLowerCase()) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+// }
+
+// TODO: ask number question, guess until you get it
 
 function question5() {
   var questionText = "Name one of Snow White's seven dwarfs."
-  var answerArray = ["Doc, Grumpy, Happy, Sleepy, Bashful, Sneezy, Dopey"];
+  var answerArray = ["doc", "grumpy", "happy", "sleepy", "bashful", "sneezy", "dopey"];
   var userAnswer = askQuestion(questionText,"dwarf name");
   var resultText = "";
-  
-  if (checkAnswer(userAnswer, answerArray) === true) {
+
+  var correct = "";
+  for (var i = 0; i < answerArray.length; i++) {
+    if (userAnswer.toLowerCase() === answerArray[i]) {
+      correct = true;
+    }
+  }
+
+  if (correct === true) {
       resultText = "Yes, " + userAnswer + " is one of the seven!";
       score++;
     } else {
       resultText = "No, " + userAnswer + " is not one of the seven.";
-    }
   }
 
   // find out if the user won
   if (score === 5) {
-    resultText += "YOU WON! Congratulations " + userName + ", you got all 4 questions correct!";
+    resultText += "<br>YOU WON! Congratulations " + userName + ", you got all 4 questions correct!";
   } else {
-    resultText += "SORRY, YOU LOSE! Nice try " + userName + ", but you got " + score + " questions right and " + (4 - score) + " wrong.";
+    resultText += "<br>SORRY, YOU LOSE! Nice try " + userName + ", but you got " + score + " questions right and " + (5 - score) + " wrong.";
   }
 
   displayQuestion(questionText);
