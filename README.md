@@ -9,6 +9,8 @@ Class 3 Guessing Game
 DESCRIPTION
 Create a game in javascript using prompts to ask the user to answer 4 questions. Use alerts to give customized responses after each answer and a message at the end telling the user how many they answered correctly
 
-CITATIONS
+RESOURCES
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators
-https://www.w3schools.com/css/css_align.asp
+http://permadi.com/tutorial/jsInnerHTMLDOM/
+http://www.color-hex.com/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
