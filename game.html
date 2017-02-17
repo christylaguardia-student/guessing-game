@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Guessing Game</title>
-  <script type="text/javascript" src="script.js"></script>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Guessing Game</h1>
-  <p><a href="index.html">Go Back</a></p>
+  <head>
+    <title>Guessing Game</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h2>Guessing Game</h2>
+    <p><a href="index.html">Go Back</a></p>
 
-  <!-- message to user goes here -->
-  <p id="gameResult"></p>
+    <!-- message to user goes here -->
+    <!-- <p id="gameResult">messages go here</p> -->
 
-  <button type="button" onclick="playGame()">Play Game!</button>
+    <p id="gameQuestion">question</p>
+    <p id="userAnswer">answer</p>
+    <p id="gameResult">result</p>
+    <p id="gameScore">score</p>
 
-</body>
+    <!-- <button id="myBtn" type="button" onclick="playGame()" value="Play Game!">button</button> -->
+    <input type="button" onclick="playGame()" value="Play Game!" id="myBtn"></input> 
+
+  </body>
 </html>
