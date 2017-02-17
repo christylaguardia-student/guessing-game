@@ -6,19 +6,14 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h2>Guessing Game</h2>
-    <p><a href="index.html">Go Back</a></p>
-
-    <!-- message to user goes here -->
-    <!-- <p id="gameResult">messages go here</p> -->
-
-    <p id="gameQuestion">question</p>
-    <p id="userAnswer">answer</p>
-    <p id="gameResult">result</p>
-    <p id="gameScore">score</p>
-
-    <!-- <button id="myBtn" type="button" onclick="playGame()" value="Play Game!">button</button> -->
-    <input type="button" onclick="playGame()" value="Play Game!" id="myBtn"></input> 
-
+    <h1>Guessing Game</h1>
+    <section id="game">
+      <div id="gameQuestion"></div>
+      <div id="userAnswer"></div>
+      <div id="gameResult"></div>
+      <div id="gameScore"></div>
+      <input type="button" onclick="playGame()" value="Play Game!" id="myBtn"></input>
+      <p><a href="index.html">Go Back</a></p>
+    </section>
   </body>
 </html>
