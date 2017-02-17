@@ -1,12 +1,13 @@
 * {
   font-family: "Helvetica Neue", sans-serif;
+  text-align: center;
 }
 
 h1 {
   color: rgb(232, 162, 2);
-  text-align: center;
+  /*text-align: center;*/
   font-size: 56px;
-  font-style: italic;
+  /*font-style: italic;*/
 }
 
 img {
@@ -20,9 +21,39 @@ address {
 }
 
 #gameQuestion {
-  color: #0000FF;
+  color: #FFFFFF;
+  background-color: #323232;
+  font-size: 24px;
+  font-style: italic;
+  height: 50px;
+}
+
+#userAnswer {
+  color: #323232;
+  background-color: #ffec8b;
+  height: 50px;
 }
 
 #gameResult {
-  color: #FF0000;
+  color: #FF0000
+
+}
+
+#myBtn {
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: #323232;
+    /*color: #FFFFFF;*/
+    border: 2px solid #87cefa;
+    padding: 14px 40px;
+    margin: 20px;
+}
+
+#myBtn:hover {
+  background-color: #87cefa;
+  cursor: pointer;
+  color: #323232;
 }
