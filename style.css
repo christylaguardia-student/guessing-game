@@ -1,72 +1,91 @@
-* {
-  font-family: "Helvetica Neue", sans-serif;
+html, body {
+  /*margin: 0;
+  padding: 0;*/
+  font-family: "Tahoma", sans-serif;
+  background-color: #f7f7f7;
 }
 
 h1 {
-  color: rgb(232, 162, 2);
+  color: #746bab;
   font-size: 56px;
   text-align: center;
+  text-shadow: 2px 2px #333333;
+}
+
+h2 {
+  color: #1ab28a;
+  text-shadow: 1px 1px #333333;
 }
 
 img {
   display: block;
   margin: auto;
-  width: 40%;
+  width: 200px;
 }
 
-address {
-  text-align: center;
+section {
+  margin-left: 200px;
+  margin-right: 200px;
+  display: inline-block;
+  border: 5px solid #746bab;
+  background-color: #ffffff;
+  padding: 10px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 #game {
   text-align: center;
-  margin-left: 100px;
-  margin-right: 100px;
-  /*display: block;*/
+  margin-top: 20px;
+  margin-left: 300px;
+  margin-right: 300px;
+  border: 5px solid #746bab;
+  font-size: 24px;
+  background-color: #FFFFFF;
 }
 
 #gameQuestion {
   color: #FFFFFF;
-  background-color: #323232;
-  font-size: 24px;
+  background-color: #4a62d8;
   font-style: italic;
+  padding: 30px;
 }
 
 #userAnswer {
-  color: #323232;
-  background-color: #ffec8b;
-  font-size: 24px;
-
+  color: #FFFFFF;
+  background-color: #1ab28a;
+  padding: 20px;
 }
 
 #gameResult {
-  /*color: #ccccff;*/
-  font-size: 18px;
+  color: #FFFFFF;
+  background-color: #76d0c0;
+  padding: 20px;
 }
 
-div .correct {
-  color: green;
+#gameScore {
+  color: #fbbe4f;
+  background-color: ;
+  padding: 20px;
 }
-
-div .incorrect {
-  color: red;
-}
-
 
 #myBtn {
-    color: #FFFFFF;
+    color: #FFFFFF ;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    background-color: #323232;
-    border: 2px solid #87cefa;
+    background-color: #746bab;
+    border: 2px solid #746bab;
     padding: 14px 40px;
     margin: 20px;
+    font-family: "Arial";
+    /*font-size: 28px;*/
 }
 
 #myBtn:hover {
-  background-color: #87cefa;
+  background-color: #fbbe4f;
   cursor: pointer;
-  color: #323232;
+  color: #746bab;
 }

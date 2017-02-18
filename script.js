@@ -6,23 +6,11 @@ var questionText = "";
 var userAnswer = "";
 var resultText = "";
 
-// get user's name on page load
-getUserName();
-
-function getUserName() {
-  userName = prompt("Welcome! What is your name?","type your name here");
-  console.log("user's name: " + userName);
-  // check if no name
-  while (userName === "" || userName === "type your name here") {
-    userName = prompt("Don't be shy! Tell me your name?","type your name here");
-  }
-  return userName;
-}
-
 function playGame() {
-  // find out what question they're on
+  // find out what question to give the user
   switch (nextQuestion) {
     case 1:
+      getUserName();
       question1();
       displayResult();
       nextQuestion = 2;
@@ -61,59 +49,73 @@ function playGame() {
   console.log("next question number: " + nextQuestion);
 }
 
+function getUserName() {
+  userName = prompt("Excelent! Before we begin, what is your name?","type your name here");
+  // check if no name
+  while (userName === "" || userName === "type your name here") {
+    userName = prompt("Don't be shy! Tell me your name?","type your name here");
+  }
+  return userName;
+  console.log("user's name: " + userName);
+}
+
 function displayResult() {
+  // show the qustion
   var questionElement = document.getElementById("gameQuestion");
   questionElement.innerHTML = questionText;
   console.log("Question: " + questionText);
 
+  // show the user's answer
   var displayAnswer = document.getElementById("userAnswer");
   displayAnswer.innerHTML = userName + "'s answer: " + userAnswer;
   console.log("Answer: " + userAnswer);
 
+  // show the if the user got it correct
   var displayResult = document.getElementById("gameResult");
   displayResult.innerHTML = resultText;
   console.log("Result: " + resultText);
 
+  // show the total score
   var displayScore = document.getElementById("gameScore");
-  displayScore.innerHTML = "Score: " + score;
+  displayScore.innerHTML = "Score: " + score + " / 6";
   console.log("Score: " + score);
 }
 
 function question1() {
-  questionText = "Is lemon an anagram of melon?";
+  questionText = "Did Cinderella leave the ball at midnight?";
   userAnswer = prompt(questionText, "yes or no?");
   // check if answer is correct
   if (userAnswer.toLowerCase() === 'yes' || userAnswer.toLowerCase() === 'y') {
-    resultText = "<div class=.correct>Correct! Good job!</div>";
+    resultText = "Correct! Good job" + userName + "!";
     score++;
   } else {
-    resultText = "<div class=.incorrect>Sorry wrong answer! The letters in melon can be re-arranged to spell lemon.</div>";
+    resultText = "Sorry " + userName + " wrong answer!";
   }
   // change button text
   document.getElementById("myBtn").value = "Next Question";
 }
 
 function question2() {
-  questionText = "Is Mount Olympus located in the Alps?";
+  questionText = "In The Lion King, is Scar's scar on the right side of his face?";
   userAnswer = prompt(questionText, "yes or no?");
   // check if answer is correct
   if (userAnswer.toLowerCase() === 'no' || userAnswer.toLowerCase() === 'n') {
-    resultText = "Right " + userName + "! Mount Olympus is in Greece. You sure know your mountains!";
+    resultText = "Right " + userName + "! You sure know your villains!";
     score++;
   } else {
-    resultText = "Nope, Mount Olympus is in Greece, not the Alps.";
+    resultText = "Nope, his scar is on the left side of his face.";
   }
 }
 
 function question3() {
-  questionText = "Is Mars the fourth planet from the Sun?";
+  questionText = "In Peter Pan, did crodile ate Captain Hook's left hand?";
   userAnswer = prompt(questionText, "yes or no?");
   // check if answer is correct
   if (userAnswer.toLowerCase() === 'yes' || userAnswer.toLowerCase() === 'y') {
     resultText = "Bingo " + userName + "!";
     score++;
   } else {
-    resultText = "No " + userName + ". The forth planet from the Sun is Mars.";
+    resultText = "No " + userName + ". The hook was on his left hand.";
   }
 }
 
@@ -164,9 +166,9 @@ function question6() {
   }
   // find out if the user won
   if (score === 6) {
-    resultText += "<br>YOU WON! Congratulations " + userName + ", you got all 4 questions correct!";
+    score = "YOU WON! Congratulations " + userName + ", you got all 6 questions correct!";
   } else {
-    resultText += "<br>SORRY, YOU LOSE! Nice try " + userName + ", but you got " + score + " questions right and " + (6 - score) + " wrong.";
+    score = "SORRY, YOU LOSE! Nice try " + userName + ", but you got " + score + " questions right and " + (6 - score) + " wrong.";
   }
   // change button text
   document.getElementById("myBtn").value = "New Game";
