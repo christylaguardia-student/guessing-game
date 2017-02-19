@@ -1,6 +1,4 @@
-html, body {
-  /*margin: 0;
-  padding: 0;*/
+body {
   font-family: "Tahoma", sans-serif;
   background-color: #f7f7f7;
 }
@@ -14,7 +12,8 @@ h1 {
 
 h2 {
   color: #1ab28a;
-  text-shadow: 1px 1px #333333;
+  /*text-shadow: 1px 1px #333333;*/
+  text-align: center;
 }
 
 img {
@@ -23,26 +22,29 @@ img {
   width: 200px;
 }
 
-section {
-  margin-left: 200px;
-  margin-right: 200px;
-  display: inline-block;
-  border: 5px solid #746bab;
-  background-color: #ffffff;
+.container {
   padding: 10px;
-  width: auto;
-  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 10px auto;
   vertical-align: middle;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+div, #game {
+  background-color: #FFFFFF;
+  -moz-box-shadow: 5px 5px 5px #777777;
+  -webkit-box-shadow: 5px 5px 5px #777777;
+  border-radius: 5px;
 }
 
 #game {
   text-align: center;
-  margin-top: 20px;
-  margin-left: 300px;
-  margin-right: 300px;
-  border: 5px solid #746bab;
-  font-size: 24px;
-  background-color: #FFFFFF;
+  font-size: 24px
+  width: 400px;
+  margin: auto;
+  border-radius: 5px;
 }
 
 #gameQuestion {
@@ -70,7 +72,7 @@ section {
   padding: 20px;
 }
 
-#myBtn {
+.button {
     color: #FFFFFF ;
     text-align: center;
     text-decoration: none;
@@ -79,12 +81,12 @@ section {
     background-color: #746bab;
     border: 2px solid #746bab;
     padding: 14px 40px;
-    margin: 20px;
+    margin: 5px;
     font-family: "Arial";
     /*font-size: 28px;*/
 }
 
-#myBtn:hover {
+.button:hover {
   background-color: #fbbe4f;
   cursor: pointer;
   color: #746bab;

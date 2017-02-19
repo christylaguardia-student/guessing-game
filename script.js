@@ -86,7 +86,7 @@ function question1() {
   userAnswer = prompt(questionText, "yes or no?");
   // check if answer is correct
   if (userAnswer.toLowerCase() === 'yes' || userAnswer.toLowerCase() === 'y') {
-    resultText = "Correct! Good job" + userName + "!";
+    resultText = "Correct! Good job " + userName + "!";
     score++;
   } else {
     resultText = "Sorry " + userName + " wrong answer!";
@@ -108,7 +108,7 @@ function question2() {
 }
 
 function question3() {
-  questionText = "In Peter Pan, did crodile ate Captain Hook's left hand?";
+  questionText = "In Peter Pan, did the crodile eat Captain Hook's left hand?";
   userAnswer = prompt(questionText, "yes or no?");
   // check if answer is correct
   if (userAnswer.toLowerCase() === 'yes' || userAnswer.toLowerCase() === 'y') {
@@ -150,20 +150,18 @@ function question6() {
   questionText = "Name one of Snow White's seven dwarfs."
   answerArray = ["doc", "grumpy", "happy", "sleepy", "bashful", "sneezy", "dopey"];
   userAnswer = prompt(questionText,"dwarf name");
+
   // check if answer is in the list of correct answers
-  var correct = "";
   for (var i = 0; i < answerArray.length; i++) {
     if (userAnswer.toLowerCase() === answerArray[i]) {
-      correct = true;
-    }
-  }
-  // check if answer is correct
-  if (correct === true) {
       resultText = "Yes, " + userAnswer + " is one of the seven!";
       score++;
+      break;
     } else {
       resultText = "No, " + userAnswer + " is not one of the seven.";
+    }
   }
+
   // find out if the user won
   if (score === 6) {
     score = "YOU WON! Congratulations " + userName + ", you got all 6 questions correct!";
