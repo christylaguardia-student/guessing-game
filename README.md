@@ -14,3 +14,4 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comp
 http://permadi.com/tutorial/jsInnerHTMLDOM/
 http://www.color-hex.com/
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+http://www.disneytrivia.net/

@@ -1,19 +1,26 @@
 body {
   font-family: "Tahoma", sans-serif;
   background-color: #f7f7f7;
+  margin: 0;
 }
 
 h1 {
-  color: #746bab;
+  color: #FFFFFF;
   font-size: 56px;
-  text-align: center;
-  text-shadow: 2px 2px #333333;
+  text-align: left;
+  vertical-align: bottom;
+  /*text-shadow: 2px 2px #333333;*/
+  background-color: #746bab;
+  margin: 0 auto;
+  padding-top: 60px;
+  /*padding: 80px 10px;*/
+
 }
 
 h2 {
   color: #1ab28a;
   /*text-shadow: 1px 1px #333333;*/
-  text-align: center;
+  /*text-align: center;*/
 }
 
 img {
@@ -40,11 +47,20 @@ div, #game {
 }
 
 #game {
-  text-align: center;
+  padding: 10px;
+  /*width:` 300px;
+  height`: 300px;*/
+  margin: 10px auto;
+  vertical-align: top;
+  display: inline-block;
+  box-sizing: border-box;
+
+  /*text-align: center;*/
   font-size: 24px
   width: 400px;
-  margin: auto;
-  border-radius: 5px;
+  /*margin: auto;
+  padding: 10px;*/
+  /*border-radius: 5px;*/
 }
 
 #gameQuestion {
