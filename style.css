@@ -9,26 +9,14 @@ h1 {
   font-size: 56px;
   text-align: left;
   vertical-align: bottom;
-  /*text-shadow: 2px 2px #333333;*/
   background-color: #746bab;
   margin: 0 auto;
   padding-top: 60px;
   padding-left: 10px;
-  /*padding: 80px 10px;*/
-
 }
 
 h2 {
   color: #746bab;
-  /*color: #1ab28a;*/
-  /*text-shadow: 1px 1px #333333;*/
-  /*text-align: center;*/
-}
-
-#charlie {
-  display: block;
-  margin: auto;
-  width: 200px;
 }
 
 .container {
@@ -39,6 +27,12 @@ h2 {
   vertical-align: middle;
   display: inline-block;
   box-sizing: border-box;
+}
+
+.photo {
+  display: block;
+  margin: 0;
+  width: 100%;
 }
 
 div, #game {
