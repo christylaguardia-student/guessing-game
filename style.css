@@ -13,17 +13,19 @@ h1 {
   background-color: #746bab;
   margin: 0 auto;
   padding-top: 60px;
+  padding-left: 10px;
   /*padding: 80px 10px;*/
 
 }
 
 h2 {
-  color: #1ab28a;
+  color: #746bab;
+  /*color: #1ab28a;*/
   /*text-shadow: 1px 1px #333333;*/
   /*text-align: center;*/
 }
 
-img {
+#charlie {
   display: block;
   margin: auto;
   width: 200px;
@@ -48,44 +50,31 @@ div, #game {
 
 #game {
   padding: 10px;
-  /*width:` 300px;
-  height`: 300px;*/
-  margin: 10px auto;
+  margin: 10px;
   vertical-align: top;
   display: inline-block;
   box-sizing: border-box;
-
-  /*text-align: center;*/
   font-size: 24px
   width: 400px;
-  /*margin: auto;
-  padding: 10px;*/
-  /*border-radius: 5px;*/
 }
 
-#gameQuestion {
-  color: #FFFFFF;
-  background-color: #4a62d8;
-  font-style: italic;
-  padding: 30px;
+#game img {
+  height: 32px;
+  width: 32px;
+  display: inline-block;
+  text-align: left;
 }
 
-#userAnswer {
-  color: #FFFFFF;
-  background-color: #1ab28a;
-  padding: 20px;
+.correct {
+  color: #1ab28a;
 }
 
-#gameResult {
-  color: #FFFFFF;
-  background-color: #76d0c0;
-  padding: 20px;
+.incorrect {
+  color: #FF0000;
 }
 
-#gameScore {
-  color: #fbbe4f;
-  background-color: ;
-  padding: 20px;
+#game p {
+  padding-left: 20px;
 }
 
 .button {
@@ -99,7 +88,6 @@ div, #game {
     padding: 14px 40px;
     margin: 5px;
     font-family: "Arial";
-    /*font-size: 28px;*/
 }
 
 .button:hover {

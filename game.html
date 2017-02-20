@@ -7,29 +7,29 @@
   <body>
     <h1>Guessing Game</h1>
     <div id="game">
-      <h2>Questions</h2>
       <form name="gameForm" display="block">
         <!-- Question 1 -->
-        Did Cinderella leave the ball at midnight?<br>
+        <h2>Question 1</h2>
+        <p>Did Cinderella leave the ball at midnight?<br>
         <input type="radio" name="answer1" value="yes">Yes<br>
-        <input type="radio" name="answer1" value="no">No<br>
+        <input type="radio" name="answer1" value="no">No</p>
         <p id="answer1result"></p>
-
         <!-- Question 2 -->
-        In The Lion King, which side of Scar's face is his scar?<br>
+        <h2>Question 2</h2>
+        <p>In The Lion King, which side of Scar's face is his scar?<br>
         <input type="radio" name="answer2" value="left">Left<br>
-        <input type="radio" name="answer2" value="right">Right<br>
+        <input type="radio" name="answer2" value="right">Right</p>
         <p id="answer2result"></p>
-
         <!-- Question 3 -->
-        In Peter Pan, in what city does the story begin in?<br>
+        <h2>Question 3</h2>
+        <p>In Peter Pan, in what city does the story begin in?<br>
         <input type="radio" name="answer3" value="Liverpool">Liverpool<br>
         <input type="radio" name="answer3" value="London">London<br>
-        <input type="radio" name="answer3" value="London">Manchester<br>
+        <input type="radio" name="answer3" value="London">Manchester</p>
         <p id="answer3result"></p>
-
         <!-- Question 4 -->
-        How many fingers does Mickey Mouse have?<br>
+        <h2>Question 4</h2>
+        <p>How many fingers does Mickey Mouse have?<br>
         <select name="answer4">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -41,34 +41,24 @@
           <option value="8">8</option>
           <option value="9">9</option>
           <option value="10">10</option>
-        </select>
+        </select></p>
         <p id="answer4result"></p>
-
         <!-- Question 5 -->
-        According to a song in Alice in Wonderland, how many un-birthdays does one have each year?<br>
-        <input type="text" name="answer5"><br>
+        <h2>Question 5</h2>
+        <p>According to a song in Alice in Wonderland, how many un-birthdays does one have each year?<br>
+        <input type="text" name="answer5"></p>
         <p id="answer5result"></p>
-
         <!-- Question 6 -->
-        Name one of Snow White's seven dwarfs.<br>
-        <input type="text" name="answer6"><br>
+        <h2>Question 6</h2>
+        <p>Name one of Snow White's seven dwarfs.<br>
+        <input type="text" name="answer6"></p>
         <p id="answer6result"></p><br>
-
         <!-- Results -->
         <h2 id="gameScore"></h2>
-        <input id="submitButton" class="button" type="button" onclick="playGame()" value="Submit"><br>
-
+        <input id="submitButton" class="button" type="button" onclick="playGame()" value="Submit">
+        <a class="button" href="index.html">Home</a>
       </form>
     </div>
-
-    <div id="game">
-      <h2>Results</h2>
-      <table id="game" border="1">
-      </table>
-      <br>
-      <a class="button" href="index.html">Home</a>
-    </div>
-
     <script type="text/javascript" src="script_game.js"></script>
   </body>
 </html>
