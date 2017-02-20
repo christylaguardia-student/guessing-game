@@ -7,22 +7,26 @@
   <body>
     <h1>Guessing Game</h1>
     <div id="game">
+
       <form name="gameForm" display="block">
-        <h2>Enter Your Name:</h2><input type="text" name="usersName"><br>
+        <h2>Enter Your Name:</h2><input type="text" name="usersName" value="type your name"><br>
         <!-- Question 1 -->
         <h2>Question 1</h2>
+        <img class="thumbnail" src="images/cinderella.jpg">
         <p>Did Cinderella leave the ball at midnight?<br>
         <input type="radio" name="answer1" value="yes">Yes<br>
         <input type="radio" name="answer1" value="no">No</p>
         <p id="answer1result"></p>
         <!-- Question 2 -->
         <h2>Question 2</h2>
+        <img class="thumbnail" src="images/scar.jpg">
         <p>In The Lion King, which side of Scar's face is his scar?<br>
         <input type="radio" name="answer2" value="left">Left<br>
         <input type="radio" name="answer2" value="right">Right</p>
         <p id="answer2result"></p>
         <!-- Question 3 -->
         <h2>Question 3</h2>
+        <img class="thumbnail" src="images/peter-pan.jpg">
         <p>In Peter Pan, in what city does the story begin in?<br>
         <input type="radio" name="answer3" value="Liverpool">Liverpool<br>
         <input type="radio" name="answer3" value="London">London<br>
@@ -30,6 +34,7 @@
         <p id="answer3result"></p>
         <!-- Question 4 -->
         <h2>Question 4</h2>
+        <img class="thumbnail" src="images/mickey-mouse.png">
         <p>How many fingers does Mickey Mouse have?<br>
         <select name="answer4">
           <option value="1">1</option>
@@ -46,11 +51,13 @@
         <p id="answer4result"></p>
         <!-- Question 5 -->
         <h2>Question 5</h2>
+        <img class="thumbnail" src="images/alice-in-wonderland.jpg">
         <p>According to a song in Alice in Wonderland, how many un-birthdays does one have each year?<br>
         <input type="text" name="answer5"></p>
         <p id="answer5result"></p>
         <!-- Question 6 -->
         <h2>Question 6</h2>
+        <img class="thumbnail" src="images/snow-white.jpg">
         <p>Name one of Snow White's seven dwarfs.<br>
         <input type="text" name="answer6"></p>
         <p id="answer6result"></p><br>
@@ -60,6 +67,6 @@
         <a class="button" href="index.html">Home</a>
       </form>
     </div>
-    <script type="text/javascript" src="script_game.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

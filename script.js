@@ -1,173 +1,85 @@
-// global variables
 var userName = "";
-var nextQuestion = 1;
+// var questionsArray = ["Did Cinderella leave the ball at midnight?","In The Lion King, which side of Scar\'s face is his scar?","In Peter Pan, in what city does the story begin in?","How many fingers does Mickey Mouse have?","According to a song in Alice in Wonderland, how many un-birthdays does one have each year?","Name one of Snow White's seven dwarfs."];
+var answersArray = ["yes","left","London","8","364",["doc", "grumpy", "happy", "sleepy", "bashful", "sneezy", "dopey"]];
+var userAnswerArray = [];
+var resultsArray = [];
 var score = 0;
-var questionText = "";
-var userAnswer = "";
-var resultText = "";
 
 function playGame() {
-  // find out what question to give the user
-  switch (nextQuestion) {
-    case 1:
-      getUserName();
-      question1();
-      displayResult();
-      nextQuestion = 2;
-      break;
-    case 2:
-      question2();
-      displayResult();
-      nextQuestion = 3;
-      break;
-    case 3:
-      question3();
-      displayResult();
-      nextQuestion = 4;
-      break;
-    case 4:
-      question4();
-      displayResult();
-      nextQuestion = 5;
-      break;
-    case 5:
-      question5();
-      displayResult();
-      nextQuestion = 6;
-      break;
-    case 6:
-      question6();
-      displayResult();
-      nextQuestion = 0;
-      break;
-    default:
-      // reset the game
-      nextQuestion = 1;
-      score = 0;
-      break;
-  }
-  console.log("next question number: " + nextQuestion);
+  getUsersAnswers();
+  checkAnswers();
+  checkAnswer6();
+  showResults();
 }
 
-function getUserName() {
-  userName = prompt("Excelent! Before we begin, what is your name?","type your name here");
-  // check if no name
-  while (userName === "" || userName === "type your name here") {
-    userName = prompt("Don't be shy! Tell me your name?","type your name here");
-  }
-  return userName;
-  console.log("user's name: " + userName);
+function getUsersAnswers() {
+  // get the user's answers from the form
+  var form = document.forms["gameForm"];
+  userName = form.elements["usersName"].value;
+  console.log(userName);
+  userAnswerArray.push(form.elements["answer1"].value);
+  userAnswerArray.push(form.elements["answer2"].value);
+  userAnswerArray.push(form.elements["answer3"].value);
+  userAnswerArray.push(form.elements["answer4"].value);
+  userAnswerArray.push(form.elements["answer5"].value);
+  userAnswerArray.push(form.elements["answer6"].value.toLowerCase());
 }
 
-function displayResult() {
-  // show the qustion
-  var questionElement = document.getElementById("gameQuestion");
-  questionElement.innerHTML = questionText;
-  console.log("Question: " + questionText);
-
-  // show the user's answer
-  var displayAnswer = document.getElementById("userAnswer");
-  displayAnswer.innerHTML = userName + "'s answer: " + userAnswer;
-  console.log("Answer: " + userAnswer);
-
-  // show the if the user got it correct
-  var displayResult = document.getElementById("gameResult");
-  displayResult.innerHTML = resultText;
-  console.log("Result: " + resultText);
-
-  // show the total score
-  var displayScore = document.getElementById("gameScore");
-  displayScore.innerHTML = "Score: " + score + " / 6";
-  console.log("Score: " + score);
-}
-
-function question1() {
-  questionText = "Did Cinderella leave the ball at midnight?";
-  userAnswer = prompt(questionText, "yes or no?");
-  // check if answer is correct
-  if (userAnswer.toLowerCase() === 'yes' || userAnswer.toLowerCase() === 'y') {
-    resultText = "Correct! Good job " + userName + "!";
-    score++;
-  } else {
-    resultText = "Sorry " + userName + " wrong answer!";
-  }
-  // change button text
-  document.getElementById("myBtn").value = "Next Question";
-}
-
-function question2() {
-  questionText = "In The Lion King, is Scar's scar on the right side of his face?";
-  userAnswer = prompt(questionText, "yes or no?");
-  // check if answer is correct
-  if (userAnswer.toLowerCase() === 'no' || userAnswer.toLowerCase() === 'n') {
-    resultText = "Right " + userName + "! You sure know your villains!";
-    score++;
-  } else {
-    resultText = "Nope, his scar is on the left side of his face.";
-  }
-}
-
-function question3() {
-  questionText = "In Peter Pan, did the crodile eat Captain Hook's left hand?";
-  userAnswer = prompt(questionText, "yes or no?");
-  // check if answer is correct
-  if (userAnswer.toLowerCase() === 'yes' || userAnswer.toLowerCase() === 'y') {
-    resultText = "Bingo " + userName + "!";
-    score++;
-  } else {
-    resultText = "No " + userName + ". The hook was on his left hand.";
-  }
-}
-
-function question4() {
-  questionText = "How many fingers does Mickey Mouse have?";
-  userAnswer = prompt(questionText, "enter number here");
-  // check if answer is correct
-  if (parseInt(userAnswer) === 8) {
-    resultText = "Excelent " + userName + "!";
-    score++;
-  } else if (userAnswer < 8) {
-    resultText = "Actually, Mickey has 8 fingers total, not " + userAnswer + ". We're disappointed you didn't know that.";
-  } else if (userAnswer > 8) {
-    resultText = "Micky is a mouse. There's no way he could have " + userAnswer + " fingers. The right answer is 8.";
-  } else {
-    resultText = "Wrong answer " + userName;
-  }
-}
-
-function question5() {
-  questionText = "In Beauty and the Beast, how many dozens of eggs does Gaston say he eats in order to stay 'roughly the size of barge?'";
-  userAnswer = prompt(questionText, "enter number of dozens");
-  // force user to keep guessing until answer is correct
-  while (parseInt(userAnswer) !== 5) {
-    userAnswer = prompt("Sorry, that's not right. Try again.", "enter number of dozens");
-  }
-  score++;
-  resultText = "Great work " + userName + "!";
-}
-
-function question6() {
-  questionText = "Name one of Snow White's seven dwarfs."
-  answerArray = ["doc", "grumpy", "happy", "sleepy", "bashful", "sneezy", "dopey"];
-  userAnswer = prompt(questionText,"dwarf name");
-
-  // check if answer is in the list of correct answers
-  for (var i = 0; i < answerArray.length; i++) {
-    if (userAnswer.toLowerCase() === answerArray[i]) {
-      resultText = "Yes, " + userAnswer + " is one of the seven!";
+function checkAnswers() {
+  // check answers for questions 1 through 5
+  for (var i = 0; i < userAnswerArray.length - 1; i++) {
+    console.log("user answer " + (i + 1) + ": " + userAnswerArray[i]);
+    console.log("correct answer: " + answersArray[i]);
+    if (userAnswerArray[i] === answersArray[i]) {
+      resultsArray.push("<p class=\"correct\"><img src=\"images/happy-icon.png\">Correct!</p>");
       score++;
-      break;
+      console.log("user answered question " + (i + 1) + " correctly");
     } else {
-      resultText = "No, " + userAnswer + " is not one of the seven.";
+      resultsArray.push("<p class=\"incorrect\"><img src=\"images/sad-icon.png\">Wrong!</p>");
+      console.log("user answered question " + (i + 1) + " incorrectly");
     }
   }
-
-  // find out if the user won
-  if (score === 6) {
-    score = "YOU WON! Congratulations " + userName + ", you got all 6 questions correct!";
-  } else {
-    score = "SORRY, YOU LOSE! Nice try " + userName + ", but you got " + score + " questions right and " + (6 - score) + " wrong.";
-  }
-  // change button text
-  document.getElementById("myBtn").value = "New Game";
 }
+
+function checkAnswer6() {
+  // check answer for question 6
+  var question6result = "";
+  console.log("user answer 6: " + userAnswerArray[5]);
+  console.log("correct answer: " + answersArray[i]);
+  for (var i = 0; i < answersArray[5].length; i++) {
+    console.log("checking against " + answersArray[5][i]);
+    if (userAnswerArray[5] === answersArray[5][i]) {
+      question6result = "<p class=\"correct\"><img src=\"images/happy-icon.png\">Correct!</p>";
+      score++;
+      console.log("checking user's answer against " + answersArray[5][i]);
+      console.log("user answered question 6 correctly");
+      break; // stop for loop after matched to correct answer
+    } else {
+      question6result = "<p class=\"incorrect\"><img src=\"images/sad-icon.png\">Wrong!</p>";
+      console.log("checking user's answer against " + answersArray[5][i]);
+    }
+  }
+  resultsArray.push(question6result);
+}
+
+function showResults() {
+  // find out if the user won
+  var scoreText = "";
+  if (score === 6) {
+    scoreText = "<span class=\"correct\">You won!<br>Congratulations " + userName + ", you got all 6 questions correct!</span>";
+  } else {
+    scoreText = "<span class=\"incorrect\">Sorry, you lose!<br>Nice try " + userName + ", but you got " + score + " questions right and " + (6 - score) + " wrong.</span>";
+  }
+  // display results
+  document.getElementById("answer1result").innerHTML = resultsArray[0];
+  document.getElementById("answer2result").innerHTML = resultsArray[1];
+  document.getElementById("answer3result").innerHTML = resultsArray[2];
+  document.getElementById("answer4result").innerHTML = resultsArray[3];
+  document.getElementById("answer5result").innerHTML = resultsArray[4];
+  document.getElementById("answer6result").innerHTML = resultsArray[5];
+  document.getElementById("gameScore").innerHTML = scoreText;
+  console.log("score: " + score);
+}
+
+// TODO: reset the game for another play
+// TODO: maybe change to answer one question at time, then show results in table
