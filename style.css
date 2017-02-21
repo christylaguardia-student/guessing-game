@@ -57,7 +57,7 @@ div, #game {
   width: 600px;
 }
 
-.correct, .incorrect img {
+.correct .incorrect img {
   height: 32px;
   width: 32px;
   display: inline-block;

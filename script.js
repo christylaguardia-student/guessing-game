@@ -66,9 +66,9 @@ function showResults() {
   // find out if the user won
   var scoreText = "";
   if (score === 6) {
-    scoreText = "<span class=\"correct\">You won!<br>Congratulations " + userName + ", you got all 6 questions correct!</span>";
+    scoreText = "<p class=\"correct\">You won!<br>Congratulations " + userName + ", you got all 6 questions correct!</p>";
   } else {
-    scoreText = "<span class=\"incorrect\">Sorry, you lose!<br>Nice try " + userName + ", but you got " + score + " questions right and " + (6 - score) + " wrong.</span>";
+    scoreText = "<p class=\"incorrect\">Sorry, you lose!<br>Nice try " + userName + ", but you got " + score + " questions right and " + (6 - score) + " wrong.</p>";
   }
   // display results
   document.getElementById("answer1result").innerHTML = resultsArray[0];
